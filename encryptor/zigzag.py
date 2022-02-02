@@ -1,12 +1,25 @@
-# Format du code ZigZag
-# X---X---X---X---X---X
-# -X-X-X-X-X-X-X-X-X-
-# --X---X---X---X---X
+class ZigZag:
 
-mot = input("Quel est le mot que vous souhaitez coder en ZIGZAG ?")
+    def __init__(self) -> None:
+        pass
 
-ligne1 = mot[::4] # on prend un lettre sur 4
-ligne2 = mot[1::2] # on prend un lettre sur 2 mais pas la 1re
-ligne3 = mot[2::4] # on prend un lettre sur 4 a partir de la 3e
+    def chiffrer(self, mot):
+        """Permet de chiffrer du texte sous le format ZigZag
 
-print(tab1 + tab2 + tab3) #Renvoi le message codé avec le code ZigZag
+        Format du ZigZag (Les X représentant les lettres):
+        X---X---X---X---X---X
+        -X-X-X-X-X-X-X-X-X-
+        --X---X---X---X---X
+
+        Args:
+            mot ([String]): Mot à chiffrer
+
+        Returns:
+            [String]: Mot chiffré
+        """
+
+        ligne1 = mot[::4] # on prend un lettre sur 4
+        ligne2 = mot[1::2] # on prend un lettre sur 2 mais pas la 1re
+        ligne3 = mot[2::4] # on prend un lettre sur 4 a partir de la 3e
+
+        return ligne1 + ligne2 + ligne3
